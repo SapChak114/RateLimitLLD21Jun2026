@@ -9,11 +9,12 @@ public class Main {
 
         RateLimitService rateLimitService = new RateLimitService();
 
-        for (int i = 0; i<3; i++) {
+        for (int i = 0; i<15; i++) {
             System.out.println(rateLimitService.checkLimit("192.168.1.1", "/search", UserType.FREE));
         }
 
-        for (int i = 0; i<3; i++) {
+        System.out.println("SlidingWindow");
+        for (int i = 0; i<15; i++) {
             System.out.println(rateLimitService.checkLimit("192.168.1.1", "/login", UserType.FREE));
         }
     }

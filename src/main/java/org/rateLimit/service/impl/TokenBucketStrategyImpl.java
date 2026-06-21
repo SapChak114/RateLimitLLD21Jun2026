@@ -22,6 +22,7 @@ public class TokenBucketStrategyImpl implements RateLimitStrategy {
             refillTokens(bucket, config);
 
             if (bucket.getTokens() >= 1) {
+                bucket.setTokens(bucket.getTokens()-1);
                 return RateLimitResponse.allowed();
             } else {
                 Double remainToken = 1 - bucket.getTokens();
